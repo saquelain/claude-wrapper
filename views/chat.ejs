@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude Chat</title>
+    <title>Claude Chat Interface</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="chat-container">
-        <div class="chat-header">
-            <h2>Claude/ChatGPT-like Chat</h2>
-            <select id="mode" class="model-select">
-                <option value="default">Claude</option>
-                <option value="advanced">Advanced Claude</option>
-            </select>
-        </div>
-        <div class="chat-window" id="chat-window"></div>
-        <form id="chat-form" autocomplete="off">
-            <input type="text" id="message-input" placeholder="Type your message..." required />
-            <button type="submit">Send</button>
-        </form>
+        <header class="chat-header">
+            <h2>AI Assistant</h2>
+            <div class="controls">
+                <select id="mode" class="model-select" aria-label="Select AI model">
+                    <option value="default" style="color: black">Claude</option>
+                    <option value="advanced" style="color: black">Advanced Claude</option>
+                </select>
+            </div>
+        </header>
+        
+        <main class="chat-window" id="chat-window">
+            <!-- Messages will be dynamically inserted here -->
+            <!-- Welcome message removed to match original functionality -->
+        </main>
+        
+        <footer>
+            <form id="chat-form" autocomplete="off">
+                <input 
+                    type="text" 
+                    id="message-input" 
+                    placeholder="Type your message..." 
+                    required 
+                    aria-label="Type your message"
+                />
+                <button type="submit" aria-label="Send message">Send</button>
+            </form>
+        </footer>
     </div>
+    
     <script src="/js/main.js"></script>
 </body>
 </html>
